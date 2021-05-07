@@ -1,0 +1,69 @@
+<view class="bottom_dzpz">
+  <view class="comment">
+    <image bindtap="bind_comment" src="https://6465-dev-2gzxo1d2dc39c5e3-1305581356.tcb.qcloud.la/center/pinglun1.png?sign=9bbc56cd339f2490ec615261231ba26e&t=1619510290"></image>
+    <text>11</text>
+  </view>
+  <view class="dianzan">
+    <image bindtap="bind_dianzan" src="https://6465-dev-2gzxo1d2dc39c5e3-1305581356.tcb.qcloud.la/center/zan1.png?sign=2cbb5813ceb11a3443b188d9d666e53a&t=1619510231"></image>
+    <text>123</text>
+  </view>
+  <view class="share">
+    <image bindtap="bind_share" src="https://6465-dev-2gzxo1d2dc39c5e3-1305581356.tcb.qcloud.la/center/fenxiang1.png?sign=1fc5da4aff0fc1b7de6d557939fba5e0&t=1619510407"></image>
+    <text>2</text>
+  </view>
+  <view bindtap="bind_collect" class="collection">
+    <image src="https://6465-dev-2gzxo1d2dc39c5e3-1305581356.tcb.qcloud.la/center/%E6%94%B6%20%E8%97%8F.png?sign=ef378e28cedc0c2e6b62a932605890e5&t=1619510607"></image>
+    <text>151</text>
+  </view>
+</view>
+
+<navigator class="user_message" 
+url="/pages/person_center/person_center">
+  <image class="user_icon" src="{{contents.user_icon}}"></image>
+  <view class="user_text">
+    <view class="user_name"><text>{{contents.name}}</text></view>
+    <view class="user_time"><text>{{contents.time}}</text></view>
+  </view>
+</navigator>
+
+<view class="contents">
+  <view class="contents_text">
+    <text class="title">{{contents.title}}</text>
+    <text class="contents">{{contents.content}}</text>
+  </view>
+  <view class="imgs">
+    <!-- <view class="contents_img" wx:for="{{contents.img}}">
+      <image src="{{item.img1}}"></image>
+    </view> -->
+  </view>
+</view>
+
+
+<view class="cutting"></view>
+
+<view class="bottom_">
+  <Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+    <block wx:if="{{tabs[0].isActive}}">
+      <view class="main_comments">
+        <view class="comments" wx:for="{{contents.bottom_users}}">
+          <navigator class="bottem_message"
+           url="/pages/person_center/person_center"
+          >
+            <image  class="bottem_head" src="{{item.imgs}}"></image>
+            <view class="bottom_name"><text>{{item.name}}</text></view>
+            <view class="bottom_time"><text>{{item.time}}</text></view>
+          </navigator>
+          <view class="comments_content"><text>{{item.comments}}</text></view>
+          <view class="bottom_dz">
+            <view class="dianzan">{{item.dznum}} 点赞</view>
+            <view class="pinglun">{{item.plnum}} 评论</view>
+          </view>
+        </view>
+      </view>
+
+
+    </block>
+    <block wx:elif="{{tabs[1].isActive}}">1</block>
+    <block wx:elif="{{tabs[2].isActive}}">2</block>
+  </Tabs>
+</view>

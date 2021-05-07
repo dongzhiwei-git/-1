@@ -1,0 +1,5 @@
+
+<view class="Button">
+  <button class="regBtn" type="primary" bindtap="reg" >注册</button>
+<button class="loginBtn" type="primary" bindtap="login">登录</button>
+</view>

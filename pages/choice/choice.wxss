@@ -1,0 +1,8 @@
+.Button{
+  display: flex;
+  flex-direction: column;
+}
+
+.regBtn{
+  margin: 50rpx auto;
+}
